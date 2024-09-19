@@ -20,5 +20,18 @@ arr = []
 for i in range(n):
     num = int(input(f"Введите число {i+1}: "))
     arr.append(num)
-bubble_sort(arr)
+
+# Ввод направления сортировки
+order = input("Введите направление сортировки (возрастание/убывание): ").lower()
+
+# Определяем порядок сортировки
+if order == "возрастание":
+    bubble_sort(arr, ascending=True)
+elif order == "убывание":
+    bubble_sort(arr, ascending=False)
+else:
+    print("Неправильный ввод. Будет выполнена сортировка по возрастанию.")
+    bubble_sort(arr, ascending=True)
+
+# Вывод отсортированного списка
 print("Отсортированные числа: ", arr)
